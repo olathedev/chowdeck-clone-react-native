@@ -1,30 +1,90 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { useFonts } from "expo-font";
+import { Link } from "expo-router";
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 export default function Index() {
+  const navigate = useNavigation() as any;
+  const [loaded, error] = useFonts({
+    "Custom-font": require("../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf"),
+    regular: require("../assets/fonts/PlusJakartaSans-Regular.ttf"),
+    semibold: require("../assets/fonts/PlusJakartaSans-SemiBold.ttf"),
+    bold: require("../assets/fonts/PlusJakartaSans-Bold.ttf"),
+  });
+
   return (
-    <View className="flex-1 justify-center items-center bg-wite px-6 font-outfit">
-      <Image
-        source={require("../assets/images/adaptive-icon.png")}
-        className="h-56 w-56 mb-10"
-        resizeMode="contain"
-      />
+    <SafeAreaView className="flex-1 p-5 bg-white">
+      <View className="flex-row justify-between items-center mb-8">
+        <Text className="text-2xl text-primary" style={{ fontFamily: "bold" }}>
+          Chowdeck
+        </Text>
 
-      <Text className="mt-8 font-outfit text-primary text-xl  font-bold mb-2">
-        Multiple delivery options
-      </Text>
-      <Text className="text-4xl tracking-wide text-text text-center font-bold">
-        Enjoy best in the market
-      </Text>
-      <Text className="text-4xl tracking-wide text-text text-center font-bold mb-10">
-        exchange rates
-      </Text>
+        <TouchableOpacity>
+          <Text
+            className="text-primary underline"
+            style={{ fontFamily: "regular" }}
+          >
+            Continue as guest
+          </Text>
+        </TouchableOpacity>
+      </View>
 
-      <TouchableOpacity
-        className="mt-10 rounded-lg py-4 flex items-center justify-center bg-primary w-full text-white"
-        onPress={() => console.log("Get Started Pressed")}
-      >
-        <Text className="text-white text-lg font-semibold">Get Started</Text>
-      </TouchableOpacity>
-    </View>
+      <View className="flex-1 items-center justify-center mb-3">
+        <View className="mb-10">
+          <Text className="text-4xl text-center" style={{ fontFamily: "bold" }}>
+            We bring you
+          </Text>
+
+          <Text
+            className="text-3xl py-2.5 border-[3px] text-center leading-[1.5] bg-orange-600/50 my-3 rounded-2xl w-auto px-2"
+            style={{ fontFamily: "bold" }}
+          >
+            Chow
+          </Text>
+          <Text
+            className="text-4xl text-center "
+            style={{ fontFamily: "bold" }}
+          >
+            wherever you are.
+          </Text>
+        </View>
+
+        <Image
+          source={require("../assets/images/onboard.png")}
+          className="w-full h-80"
+          resizeMode="contain"
+        />
+      </View>
+
+      <View className="my-6 text-center">
+        <TouchableOpacity className="bg-primary py-5 rounded-lg items-center mb-4">
+          <Text className="text-white " style={{ fontFamily: "semibold" }}>
+            Get Started
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity className="flex-row justify-center items-center">
+          <Text
+            className="text-center  text-lg"
+            style={{ fontFamily: "regular" }}
+          >
+            Already have an account?
+          </Text>
+          <Text
+            className=" px-1 text-primary text-lg"
+            style={{ fontFamily: "semibold" }}
+          >
+            Login
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 }

@@ -5,15 +5,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#007B5D',
-        text: '#333333',
-        yellow: '#FCD310'
+        primary: "#0C513F",
+        text: "#333333",
+        yellow: "#FCD310",
       },
 
       fontFamily: {
-        outfit: ['outfit']
-      }
+        primary: ["Custom-font"],
+      },
     },
   },
   plugins: [],
-}
+};
