@@ -81,8 +81,6 @@ export default function Index() {
           </Text>
         </TouchableOpacity>
       </View>
-
-      
     </SafeAreaView>
   );
 }

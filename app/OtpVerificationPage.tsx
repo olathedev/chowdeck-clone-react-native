@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { ArrowLeft } from "lucide-react-native";
 import { useRouter } from "expo-router";
 
-const login = () => {
+const OtpVerificationPage = () => {
   const router = useRouter();
 
   return (
@@ -23,46 +23,44 @@ const login = () => {
 
       <View className="mt-10 items-center">
         <Text className="text-3xl mb-3" style={{ fontFamily: "bold" }}>
-          Welcome Back
+          Verify your phone number
         </Text>
 
         <Text className="text-center text-lg" style={{ fontFamily: "regular" }}>
-          You can login back into your account using your {"\n"} phone number
+          We sent a 4-digit code to 08126325584 via {"\n"}{" "}
+          <Text className="text-primary">SMS</Text> and{" "}
+          <Text className="text-primary">Whatsapp</Text>
         </Text>
       </View>
 
       <View className="flex-1 justify-center">
         <View className="">
-          <Text className="mb-2" style={{ fontFamily: "semibold" }}>
-            Phone number{" "}
+          <Text className="mb-2 text-center" style={{ fontFamily: "semibold" }}>
+            Enter OTP{" "}
           </Text>
-          <TextInput
-            placeholder="09000000000"
-            className="w-full py-4 px-4 bg-gray-100 text-sm rounded-lg border-none text-gray-900"
-            style={{ fontFamily: "regular" }}
-          />
+
+          <View className="flex-row justify-between gap-4 px-4 my-4">
+            {[0, 1, 2, 3].map((index) => (
+              <TextInput
+                key={index}
+                className="w-20 h-20 py-4 px-10 bg-gray-100 rounded-lg border-none text-gray-900 text-2xl"
+                style={{ fontFamily: "regular" }}
+              />
+            ))}
+          </View>
+
+          <View className="flex-row justify-center mt-2">
+            <TouchableOpacity className="w-1/2 px-4 bg-gray-100 rounded-full text-sm py-2">
+              <Text className="text-center text-primary"  style={{ fontFamily: "semibold" }}> Tap here to resend OTP</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
 
       <View className="my-6 text-center">
-        <TouchableOpacity
-          className="bg-primary py-[18px] rounded-lg items-center mb-4"
-          onPress={() => router.push("/OtpVerificationPage")}
-        >
+        <TouchableOpacity className="bg-primary py-[18px] rounded-lg items-center mb-4">
           <Text className="text-white " style={{ fontFamily: "semibold" }}>
-            Continue
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          className="flex-row justify-center items-center"
-          // onPress={() => router.push("/login")}
-        >
-          <Text
-            className=" px-1 text-primary text-lg underline"
-            style={{ fontFamily: "semibold" }}
-          >
-            Continue as guest
+            Verify
           </Text>
         </TouchableOpacity>
       </View>
@@ -70,4 +68,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default OtpVerificationPage;
