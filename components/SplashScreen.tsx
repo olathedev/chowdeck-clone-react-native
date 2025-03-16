@@ -5,14 +5,14 @@ export class SplashScreen extends Component {
   render() {
     return (
       <View className="bg-primary flex-1 items-center justify-center flex-row">
-        <Image
+        {/* <Image
           source={require("../assets/images/chowdecklogo.webp")}
-          className="h-16 w-16"
-        />
+          className="h-10 w-10"
+        /> */}
         <Text
           className="text-4xl font-semibold text-white font-custom"
           style={{
-            fontFamily: "Custom-font",
+            fontFamily: "bold",
             fontWeight: 600,
           }}
         >

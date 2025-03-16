@@ -10,6 +10,9 @@ export default function RootLayout() {
   const [loading, setLoading] = useState(true);
   const [loaded, error] = useFonts({
     "Custom-font": require("../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf"),
+    regular: require("../assets/fonts/PlusJakartaSans-Regular.ttf"),
+    semibold: require("../assets/fonts/PlusJakartaSans-SemiBold.ttf"),
+    bold: require("../assets/fonts/PlusJakartaSans-Bold.ttf"),
   });
 
   useEffect(() => {
@@ -28,6 +31,7 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }} />
       <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+      <Stack.Screen name="login" options={{ headerShown: false }} />
     </Stack>
   );
 }

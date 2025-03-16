@@ -11,7 +11,7 @@ module.exports = {
       },
 
       fontFamily: {
-        primary: ["Custom-font"],
+        'family-bold': ["bold"],
       },
     },
   },

@@ -28,7 +28,7 @@
         "expo-splash-screen",
         {
           "image": "./assets/images/chowdecklogo.webp",
-          "imageWidth": 200,
+          "imageWidth": 70,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }

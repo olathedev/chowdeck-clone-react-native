@@ -1,6 +1,5 @@
-import { useNavigation } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import {
   Image,
   SafeAreaView,
@@ -11,13 +10,7 @@ import {
 } from "react-native";
 
 export default function Index() {
-  const navigate = useNavigation() as any;
-  const [loaded, error] = useFonts({
-    "Custom-font": require("../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf"),
-    regular: require("../assets/fonts/PlusJakartaSans-Regular.ttf"),
-    semibold: require("../assets/fonts/PlusJakartaSans-SemiBold.ttf"),
-    bold: require("../assets/fonts/PlusJakartaSans-Bold.ttf"),
-  });
+  const router = useRouter();
 
   return (
     <SafeAreaView className="flex-1 p-5 bg-white">
@@ -70,7 +63,10 @@ export default function Index() {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row justify-center items-center">
+        <TouchableOpacity
+          className="flex-row justify-center items-center"
+          onPress={() => router.push("/login")}
+        >
           <Text
             className="text-center  text-lg"
             style={{ fontFamily: "regular" }}
@@ -85,6 +81,8 @@ export default function Index() {
           </Text>
         </TouchableOpacity>
       </View>
+
+      
     </SafeAreaView>
   );
 }
