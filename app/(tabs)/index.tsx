@@ -120,7 +120,7 @@ const Home = () => {
             HandPicked for you
           </Text>
 
-          <ScrollView horizontal showsHorizontalScrollIndicator = {false}>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {foodItems.map((food, index) => (
               <View className="mr-6" key={index}>
                 <TouchableOpacity className="w-[20rem]  h-[10rem] rounded-lg bg-primary/20"></TouchableOpacity>
