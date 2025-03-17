@@ -1,8 +1,9 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ChevronDown, MapPin, Menu } from "lucide-react-native";
 import { categories } from "@/constants/cateories";
+import { vendors } from "@/constants/vendor";
 
 const Home = () => {
   return (
@@ -39,13 +40,29 @@ const Home = () => {
             className="w-[30%] h-28  items-center justify-center rounded-lg "
             style={{ backgroundColor: category.color }}
           >
-            <Image
-              source={category.image}
-              className="h-10 w-10 mb-2"
-            />
+            <Image source={category.image} className="h-10 w-10 mb-2" />
             <Text className="font-family_regular text-sm">{category.name}</Text>
           </TouchableOpacity>
         ))}
+      </View>
+
+      <View className="mt-8 border-t-4 border-gray-100">
+        <Text className="py-6 text-xl font-family_semibold">Explore</Text>
+
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ paddingRight: 20, paddingLeft: 1 }}
+        >
+          {vendors.map((vendor, index) => (
+            <TouchableOpacity className="items-center w-16 mr-4" key={index}>
+              <View className="h-12 w-12 bg-white border border-gray-400 rounded-full mb-1"></View>
+              <Text className="text-center font-family_regular text-xs">
+                {vendor.name}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
