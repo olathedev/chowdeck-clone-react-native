@@ -11,7 +11,10 @@ module.exports = {
       },
 
       fontFamily: {
-        'family-bold': ["bold"],
+        family_bold: ["bold"],
+        family_semibold: ["semibold"],
+        family_regular: ["regular"],
+
       },
     },
   },

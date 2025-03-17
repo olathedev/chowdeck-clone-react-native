@@ -51,14 +51,20 @@ const OtpVerificationPage = () => {
 
           <View className="flex-row justify-center mt-2">
             <TouchableOpacity className="w-1/2 px-4 bg-gray-100 rounded-full text-sm py-2">
-              <Text className="text-center text-primary"  style={{ fontFamily: "semibold" }}> Tap here to resend OTP</Text>
+              <Text
+                className="text-center text-primary"
+                style={{ fontFamily: "semibold" }}
+              >
+                {" "}
+                Tap here to resend OTP
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
       </View>
 
       <View className="my-6 text-center">
-        <TouchableOpacity className="bg-primary py-[18px] rounded-lg items-center mb-4">
+        <TouchableOpacity className="bg-primary py-[18px] rounded-lg items-center mb-4" onPress={() => router.push('/(tabs)')}>
           <Text className="text-white " style={{ fontFamily: "semibold" }}>
             Verify
           </Text>
